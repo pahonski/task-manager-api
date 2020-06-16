@@ -55,6 +55,12 @@ router.get('/tasks', auth, async(req, res) => {
     }
 })
 
+router.get('/error/:code', (req, res) => {
+    const code = req.params.code;
+
+    return res.status(code).send();
+})
+
 router.get('/tasks/:id', auth, async(req, res) => {
     const _id = req.params.id
 
